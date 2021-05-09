@@ -1,0 +1,13 @@
+*********************************
+** 42 - Unit Tests ****
+*********************************
+strlcpy: 
+       > BASIC  test : [OK]
+       > NULL   test : [OK]
+
+2/2 tests checked
+STRLEN: 
+       > BASIC test : [OK]
+       > NULL test : [OK]
+
+2/2 tests checked
