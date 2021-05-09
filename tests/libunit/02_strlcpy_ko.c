@@ -6,7 +6,7 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 14:34:39 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/08 19:22:20 by kyasuda          ###   ########.fr       */
+/*   Updated: 2021/05/09 11:17:03 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ int     strlcpy_ko(void)
     
     if (ft_strlcpy_ko(dst, src, sizeof(dst)) == strlcpy(dst, src, sizeof(dst)))
         return (0);
-    return (-1);
+    else
+        return (-1);
 }
