@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 14:36:36 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/09 12:50:17 by kyasuda          ###   ########.fr       */
+/*   Created: 2021/01/24 11:17:03 by kyasuda           #+#    #+#             */
+/*   Updated: 2021/02/05 14:30:49 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "libft.h"
 
-int	main(void)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int	count;
+	size_t	i;
+	size_t	needle_len;
 
-	u_putendl("*********************************");
-	u_putendl("** 42 - Unit Tests ****");
-	u_putendl("*********************************");
-	count = TESTS_COUNT;
-	count += strlcpy_launcher();
-	if (count == TESTS_COUNT)
-		return (0);
-	else
-		return (-1);
+	if (needle[0] == '\0')
+		return ((char *)haystack);
+	needle_len = ft_strlen(needle);
+	i = 0;
+	while (haystack[i] && len >= needle_len)
+	{
+		if (haystack[i] == needle[0] &&
+			!ft_memcmp(haystack + i, needle, needle_len))
+			return ((char *)haystack + i);
+		len--;
+		i++;
+	}
+	return (NULL);
 }

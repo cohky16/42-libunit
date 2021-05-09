@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 14:36:36 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/09 12:50:17 by kyasuda          ###   ########.fr       */
+/*   Created: 2021/01/24 09:39:19 by kyasuda           #+#    #+#             */
+/*   Updated: 2021/02/11 09:43:27 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "libft.h"
 
-int	main(void)
+size_t	ft_strlcat(char *dst, const char *src,
+					size_t dstsize)
 {
-	int	count;
+	size_t	j;
+	size_t	len;
+	size_t	dst_len;
+	size_t	src_len;
 
-	u_putendl("*********************************");
-	u_putendl("** 42 - Unit Tests ****");
-	u_putendl("*********************************");
-	count = TESTS_COUNT;
-	count += strlcpy_launcher();
-	if (count == TESTS_COUNT)
-		return (0);
-	else
-		return (-1);
+	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
+	len = dst_len + src_len;
+	if (dstsize <= dst_len)
+		return (src_len + dstsize);
+	j = 0;
+	while (src[j] && dst_len < dstsize - 1)
+		dst[dst_len++] = src[j++];
+	dst[dst_len] = '\0';
+	return (len);
 }

@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_strlcpy_ko.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 14:34:39 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/09 11:56:54 by kyasuda          ###   ########.fr       */
+/*   Created: 2021/01/31 10:53:13 by kyasuda           #+#    #+#             */
+/*   Updated: 2021/02/07 13:09:18 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "libft.h"
 
-int	strlcpy_ko(void)
+static	int		is_minus_check(int *n, int fd)
 {
-	char	dst[10];
-	char	src[10];
+	if (*n == INT_MIN)
+	{
+		ft_putstr_fd("-2147483648", fd);
+		return (1);
+	}
+	else if (*n < 0)
+	{
+		*n *= -1;
+		ft_putchar_fd('-', fd);
+	}
+	return (0);
+}
 
-	if (ft_strlcpy_ko(dst, src, sizeof(dst)) == strlcpy(dst, src, sizeof(dst)))
-		return (0);
-	else
-		return (-1);
+void			ft_putnbr_fd(int n, int fd)
+{
+	if (is_minus_check(&n, fd))
+		return ;
+	if (n > 9)
+		ft_putnbr_fd(n / 10, fd);
+	ft_putchar_fd(n % 10 + 48, fd);
 }

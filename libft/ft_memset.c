@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   04_strlcpy_buse.c                                  :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 14:34:39 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/09 11:56:13 by kyasuda          ###   ########.fr       */
+/*   Created: 2021/01/19 23:00:54 by kyasuda           #+#    #+#             */
+/*   Updated: 2021/01/31 10:00:21 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "libft.h"
 
-int	strlcpy_buse(void)
+void	*ft_memset(void *buf, int ch, size_t n)
 {
-	char	dst[10];
-	char	src[10];
+	unsigned char	*buf_t;
+	size_t			i;
 
-	if (ft_strlcpy_buse(dst, src, sizeof(dst))
-		== strlcpy(dst, src, sizeof(dst)))
-		return (0);
-	else
-		return (-1);
+	buf_t = (unsigned char *)buf;
+	i = 0;
+	while (i < n)
+		buf_t[i++] = (unsigned char)ch;
+	return (buf);
 }
