@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 14:36:36 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/09 12:50:17 by kyasuda          ###   ########.fr       */
+/*   Created: 2021/01/23 19:28:50 by kyasuda           #+#    #+#             */
+/*   Updated: 2021/02/07 13:19:14 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "libft.h"
 
-int	main(void)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	count;
+	unsigned char	*s1_c;
+	unsigned char	*s2_c;
+	size_t			i;
 
-	u_putendl("*********************************");
-	u_putendl("** 42 - Unit Tests ****");
-	u_putendl("*********************************");
-	count = TESTS_COUNT;
-	count += strlcpy_launcher();
-	if (count == TESTS_COUNT)
-		return (0);
-	else
-		return (-1);
+	s1_c = (unsigned char *)s1;
+	s2_c = (unsigned char *)s2;
+	i = 0;
+	while (s1_c[i] && s2_c[i] && i < n)
+	{
+		if (s1_c[i] != s2_c[i])
+			return ((int)s1_c[i] - (int)s2_c[i]);
+		i++;
+	}
+	if (s1_c[i] != s2_c[i] && i != n)
+		return ((int)s1_c[i] - (int)s2_c[i]);
+	return (0);
 }

@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 14:36:36 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/09 12:50:17 by kyasuda          ###   ########.fr       */
+/*   Created: 2021/01/23 18:27:40 by kyasuda           #+#    #+#             */
+/*   Updated: 2021/02/07 13:11:03 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "libft.h"
 
-int	main(void)
+char	*ft_strchr(const char *s, int c)
 {
-	int	count;
+	int		i;
 
-	u_putendl("*********************************");
-	u_putendl("** 42 - Unit Tests ****");
-	u_putendl("*********************************");
-	count = TESTS_COUNT;
-	count += strlcpy_launcher();
-	if (count == TESTS_COUNT)
-		return (0);
-	else
-		return (-1);
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == (unsigned char)c)
+			return ((char *)s + i);
+		i++;
+	}
+	if (s[i] == (unsigned char)c)
+		return ((char *)s + i);
+	return (NULL);
 }

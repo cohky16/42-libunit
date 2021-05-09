@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 14:36:36 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/09 12:50:17 by kyasuda          ###   ########.fr       */
+/*   Created: 2021/01/24 16:00:24 by kyasuda           #+#    #+#             */
+/*   Updated: 2021/02/05 14:09:16 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "libft.h"
 
-int	main(void)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int	count;
+	char	*str;
+	size_t	i;
 
-	u_putendl("*********************************");
-	u_putendl("** 42 - Unit Tests ****");
-	u_putendl("*********************************");
-	count = TESTS_COUNT;
-	count += strlcpy_launcher();
-	if (count == TESTS_COUNT)
-		return (0);
-	else
-		return (-1);
+	if (!s)
+		return (NULL);
+	else if (ft_strlen(s) < len)
+		len = ft_strlen(s);
+	if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	if (start >= ft_strlen(s))
+		return (str);
+	i = 0;
+	while (i < len)
+	{
+		str[i] = s[start + i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }

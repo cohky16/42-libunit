@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 14:36:36 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/09 12:50:17 by kyasuda          ###   ########.fr       */
+/*   Created: 2021/01/23 16:55:02 by kyasuda           #+#    #+#             */
+/*   Updated: 2021/01/31 15:58:06 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "libft.h"
 
-int	main(void)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	count;
+	unsigned char	*s1_t;
+	unsigned char	*s2_t;
+	size_t			i;
 
-	u_putendl("*********************************");
-	u_putendl("** 42 - Unit Tests ****");
-	u_putendl("*********************************");
-	count = TESTS_COUNT;
-	count += strlcpy_launcher();
-	if (count == TESTS_COUNT)
-		return (0);
-	else
-		return (-1);
+	s1_t = (unsigned char *)s1;
+	s2_t = (unsigned char *)s2;
+	i = 0;
+	while (i < n)
+	{
+		if (s1_t[i] != s2_t[i])
+			return (s1_t[i] - s2_t[i]);
+		i++;
+	}
+	return (0);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_launcher.c                                      :+:      :+:    :+:   */
+/*   00_strlcpy_launcher.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 14:48:30 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/09 11:53:02 by kyasuda          ###   ########.fr       */
+/*   Updated: 2021/05/09 12:50:04 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 static	void	load_tests(t_unit_test **testlist)
 {
-	load_test(testlist, "BUSE test", &strlcpy_buse);
-	load_test(testlist, "SEGV test", &strlcpy_segv);
-	load_test(testlist, "KO   test", &strlcpy_ko);
-	load_test(testlist, "OK   test", &strlcpy_ok);
+	load_test(testlist, "NULL   test", &strlcpy_null_test);
+	load_test(testlist, "BASIC  test", &strlcpy_basic_test);
 }
 
 static	void	put_count(int test_count, int testlist_len)
@@ -29,13 +27,13 @@ static	void	put_count(int test_count, int testlist_len)
 	u_putendl(" tests checked");
 }
 
-int	libunit_launcher(void)
+int	strlcpy_launcher(void)
 {
 	t_unit_test	*testlist;
 	int			test_count;
 	int			testlist_len;
 
-	u_putendl("libunit: ");
+	u_putendl("strlcpy: ");
 	testlist = NULL;
 	load_tests(&testlist);
 	test_count = launch_tests(&testlist);

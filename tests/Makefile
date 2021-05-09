@@ -6,7 +6,7 @@
 #    By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/08 15:08:31 by kyasuda           #+#    #+#              #
-#    Updated: 2021/05/08 20:08:37 by kyasuda          ###   ########.fr        #
+#    Updated: 2021/05/09 12:50:19 by kyasuda          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,24 +19,26 @@ LIBUNITNAME = 	libunit.a
 LIBUNIT 	= 	$(addprefix $(LIBUNITDIR), $(LIBUNITNAME))
 LOG			=	result.log
 
-SRCSO 		= 	main.c \
-				./libft/ft_tests.c
+SRCSO 		= 	main.c
 OBJSO 		= 	$(SRCSO:.c=.o)
 
-TESTSDIR	=	./libunit/
-TESTSNAME	=	00_launcher.c \
-				01_strlcpy_ok.c \
-				02_strlcpy_ko.c \
-				03_strlcpy_segv.c \
-				04_strlcpy_buse.c
-SRCS 		=	$(addprefix $(TESTSDIR), $(TESTSNAME))
-OBJS 		= 	$(SRCS:.c=.o)
+LIBFTDIR	=	../libft/
+LIBFTNAME	=	libft.a
+LIBFT 		=	$(addprefix $(LIBFTDIR), $(LIBFTNAME))
+
+STRLCPYDIR	=	./strlcpy/
+STRLCPYNAME	=	00_strlcpy_launcher.c \
+				01_strlcpy_basic_test.c \
+				02_strlcpy_null_test.c
+STRLCPY 	=	$(addprefix $(STRLCPYDIR), $(STRLCPYNAME))
+STRLCPYO 	= 	$(STRLCPY:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJSO) $(OBJS)
+$(NAME): $(OBJSO) $(STRLCPYO) $(OBJSL)
 	$(MAKE) -C $(LIBUNITDIR)
-	$(CC) $(CFLAGS) -I $(INCLUDES) $(LIBUNIT) $(OBJSO) $(OBJS) -o $(NAME)
+	$(MAKE) -C $(LIBFTDIR)
+	$(CC) $(CFLAGS) -I $(INCLUDES) $(LIBUNIT) $(LIBFT) $(OBJSO) $(STRLCPYO) -o $(NAME)
 	./$(NAME) > $(LOG) 2>/dev/null || true
 	cat $(LOG)
 
@@ -47,10 +49,12 @@ test: fclean all
 
 clean:
 	$(MAKE) -C $(LIBUNITDIR) clean
-	rm -f $(OBJSO) $(OBJS) $(LOG)
+	$(MAKE) -C $(LIBFTDIR) clean
+	rm -f $(OBJSO) $(STRLCPYO) $(LOG)
 
 fclean:	clean
 	$(MAKE) -C $(LIBUNITDIR) fclean
+	$(MAKE) -C $(LIBFTDIR) fclean
 	rm -f $(NAME)
 
 re: fclean all

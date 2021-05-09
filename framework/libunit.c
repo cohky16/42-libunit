@@ -6,7 +6,7 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 15:08:20 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/09 11:51:10 by kyasuda          ###   ########.fr       */
+/*   Updated: 2021/05/09 12:50:31 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static	t_unit_test	*new_unit_test(char *name, int(*function)(void))
 	t_unit_test	*new;
 
 	new = (t_unit_test *)malloc(sizeof(t_unit_test));
-	if (!new)
+	if (new == NULL)
 		return (NULL);
 	new->name = name;
 	new->function = function;

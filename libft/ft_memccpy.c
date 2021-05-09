@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   03_strlcpy_segv.c                                  :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 14:34:39 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/09 11:55:17 by kyasuda          ###   ########.fr       */
+/*   Created: 2021/01/23 14:06:38 by kyasuda           #+#    #+#             */
+/*   Updated: 2021/02/02 08:14:06 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "libft.h"
 
-int	strlcpy_segv(void)
+void	*ft_memccpy(void *dst, const void *src,
+					int c, size_t n)
 {
-	char	dst[1];
-	char	src[2];
+	unsigned char	*dst_t;
+	unsigned char	*src_t;
+	size_t			i;
 
-	if (ft_strlcpy_segv(dst, src, sizeof(dst))
-		== strlcpy(dst, src, sizeof(dst)))
-		return (0);
-	else
-		return (-1);
+	src_t = (unsigned char *)src;
+	dst_t = (unsigned char *)dst;
+	i = 0;
+	while (i < n)
+	{
+		dst_t[i] = src_t[i];
+		if (dst_t[i] == (unsigned char)c)
+			return (dst + i + 1);
+		i++;
+	}
+	return (NULL);
 }
