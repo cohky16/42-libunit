@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   01_strlen_basic_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 14:36:36 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/09 13:14:55 by yyamagum         ###   ########.fr       */
+/*   Created: 2021/05/08 14:27:24 by kyasuda           #+#    #+#             */
+/*   Updated: 2021/05/09 14:35:07 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
 
-int	main(void)
+int     strlen_basic_test(void)
 {
-	int	count;
+    const char    *s = "Hello";
 
-	u_putendl("*********************************");
-	u_putendl("** 42 - Unit Tests ****");
-	u_putendl("*********************************");
-	count = TESTS_COUNT;
-	count += strlcpy_launcher();
-	count += strlen_launcher();
-	if (count == TESTS_COUNT)
-		return (0);
-	else
-		return (-1);
+    if (ft_strlen(s) == strlen(s))
+        return (0);
+    return (-1);
 }
