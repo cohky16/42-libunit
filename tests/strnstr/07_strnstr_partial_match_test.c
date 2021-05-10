@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01_strnstr_basic_test.c                                    :+:      :+:    :+:   */
+/*   07_strnstr_partial_match_test.c                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: yyamagum </var/mail/yyamagum>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 14:27:24 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/10 18:54:48 by yyamagum         ###   ########.fr       */
+/*   Created: 2021/05/10 21:18:43 by yyamagum          #+#    #+#             */
+/*   Updated: 2021/05/10 21:18:45 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
 
-int     strnstr_basic_test(void)
+int     strnstr_partial_match_test(void)
 {
     const char    *s1 = "Hello World!";
-    const char    *s2 = "World";
+    const char    *s2 = "o WW";
 	const int	len = 12;
 
     if (ft_strnstr(s1, s2, len) == strnstr(s1, s2, len))

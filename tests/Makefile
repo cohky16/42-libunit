@@ -6,7 +6,7 @@
 #    By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/08 15:08:31 by kyasuda           #+#    #+#              #
-#    Updated: 2021/05/10 18:50:41 by yyamagum         ###   ########.fr        #
+#    Updated: 2021/05/10 21:23:59 by yyamagum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,8 +43,21 @@ STRLEN 		=	$(addprefix $(STRLENDIR), $(STRLENNAME))
 STRLENO 	= 	$(STRLEN:.c=.o)
 STRNSTRDIR	=	./strnstr/
 STRNSTRNAME	=	00_launcher.c \
-				01_strnstr_basic_test.c \
-				02_strnstr_null_test.c
+				01_strnstr_basic1_test.c \
+				02_strnstr_basic2_test.c \
+				03_strnstr_not_found1_test.c \
+				04_strnstr_not_found2_test.c \
+				05_strnstr_same_strs_test.c \
+				06_strnstr_same_strs_with_smaller_len_test.c \
+				07_strnstr_partial_match_test.c \
+				08_strnstr_null_first_arg_test.c \
+				09_strnstr_null_first_arg_with_len_test.c \
+				10_strnstr_null_second_arg_test.c \
+				11_strnstr_null_second_arg_with_len_test.c \
+				12_strnstr_null_args_test.c \
+				13_strnstr_null_args_with_len_test.c \
+				14_strnstr_empty_second_arg_test.c \
+				15_strnstr_empty_first_arg_test.c
 STRNSTR 		=	$(addprefix $(STRNSTRDIR), $(STRNSTRNAME))
 STRNSTRO 	= 	$(STRNSTR:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 14:48:30 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/10 18:45:20 by yyamagum         ###   ########.fr       */
+/*   Updated: 2021/05/10 21:41:37 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,22 @@
 
 static void load_tests(t_unit_test **testlist)
 {
-    load_test(testlist,  "NULL test", &strlen_null_test);
-    load_test(testlist,  "BASIC test", &strlen_basic_test);
+    load_test(testlist,  "EMPTY FIRST ARG test", &strnstr_empty_first_arg_test);
+    load_test(testlist,  "EMPTY SECOND ARG test", &strnstr_empty_second_arg_test);
+    load_test(testlist,  "NULL ARGS WITH LEN test", &strnstr_null_args_with_len_test);
+    load_test(testlist,  "NULL ARGS test", &strnstr_null_args_test);
+    load_test(testlist,  "NULL SECOND ARG WITH LEN test", &strnstr_null_second_arg_with_len_test);
+    load_test(testlist,  "NULL SECOND ARG test", &strnstr_null_second_arg_test);
+    load_test(testlist,  "NULL FIRST ARG WITH LEN test", &strnstr_null_first_arg_with_len_test);
+    load_test(testlist,  "NULL FIRST ARG test", &strnstr_null_first_arg_test);
+    load_test(testlist,  "PARTIAL MATCH test", &strnstr_partial_match_test);
+    load_test(testlist,  "SAME STRS WITH SMALLER LEN test", &strnstr_same_strs_with_smaller_len_test);
+    load_test(testlist,  "SAME STRS test", &strnstr_same_strs_test);
+    load_test(testlist,  "NOT FOUND 2 test", &strnstr_not_found2_test);
+    load_test(testlist,  "NOT FOUND 1 test", &strnstr_not_found1_test);
+    load_test(testlist,  "BASIC 2 test", &strnstr_basic2_test);
+    load_test(testlist,  "BASIC 1 test", &strnstr_basic1_test);
+
 }
 
 static void  put_count(int test_count, int testlist_len)
