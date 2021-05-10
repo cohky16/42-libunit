@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   01_strnstr_basic_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 14:36:36 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/10 18:48:27 by yyamagum         ###   ########.fr       */
+/*   Created: 2021/05/08 14:27:24 by kyasuda           #+#    #+#             */
+/*   Updated: 2021/05/10 18:54:48 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
 
-int	main(void)
+int     strnstr_basic_test(void)
 {
-	int	count;
+    const char    *s1 = "Hello World!";
+    const char    *s2 = "World";
+	const int	len = 12;
 
-	u_putendl("*********************************");
-	u_putendl("** 42 - Unit Tests ****");
-	u_putendl("*********************************");
-	count = TESTS_COUNT;
-	count += strlcpy_launcher();
-	count += strlen_launcher();
-	count += strnstr_launcher();
-	if (count == TESTS_COUNT)
-		return (0);
-	else
-		return (-1);
+    if (ft_strnstr(s1, s2, len) == strnstr(s1, s2, len))
+        return (0);
+    return (-1);
 }

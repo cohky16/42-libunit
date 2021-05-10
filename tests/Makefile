@@ -6,7 +6,7 @@
 #    By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/08 15:08:31 by kyasuda           #+#    #+#              #
-#    Updated: 2021/05/09 13:20:52 by yyamagum         ###   ########.fr        #
+#    Updated: 2021/05/10 18:50:41 by yyamagum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,13 +41,19 @@ STRLENNAME	=	00_launcher.c \
 				02_strlen_null_test.c
 STRLEN 		=	$(addprefix $(STRLENDIR), $(STRLENNAME))
 STRLENO 	= 	$(STRLEN:.c=.o)
+STRNSTRDIR	=	./strnstr/
+STRNSTRNAME	=	00_launcher.c \
+				01_strnstr_basic_test.c \
+				02_strnstr_null_test.c
+STRNSTR 		=	$(addprefix $(STRNSTRDIR), $(STRNSTRNAME))
+STRNSTRO 	= 	$(STRNSTR:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJSO) $(STRLCPYO) $(STRLENO) $(OBJSL)
+$(NAME): $(OBJSO) $(STRLCPYO) $(STRLENO) $(STRNSTRO) $(OBJSL)
 	$(MAKE) -C $(LIBUNITDIR)
 	$(MAKE) -C $(LIBFTDIR)
-	$(CC) $(CFLAGS) -I $(INCLUDES) $(LIBUNIT) $(LIBFT) $(OBJSO) $(STRLCPYO) $(STRLENO) -o $(NAME)
+	$(CC) $(CFLAGS) -I $(INCLUDES) $(LIBUNIT) $(LIBFT) $(OBJSO) $(STRLCPYO) $(STRLENO) $(STRNSTRO) -o $(NAME)
 	./$(NAME) > $(LOG) 2>/dev/null || true
 	cat $(LOG)
 
@@ -59,7 +65,7 @@ test: fclean all
 clean:
 	$(MAKE) -C $(LIBUNITDIR) clean
 	$(MAKE) -C $(LIBFTDIR) clean
-	rm -f $(OBJSO) $(STRLCPYO) $(STRLENO) $(LOG)
+	rm -f $(OBJSO) $(STRLCPYO) $(STRLENO) $(STRNSTRO) $(LOG)
 
 fclean:	clean
 	$(MAKE) -C $(LIBUNITDIR) fclean

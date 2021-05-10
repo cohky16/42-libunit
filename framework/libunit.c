@@ -6,7 +6,7 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 15:08:20 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/09 12:50:31 by kyasuda          ###   ########.fr       */
+/*   Updated: 2021/05/10 18:32:16 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,18 @@ static	int	check_pid(pid_t pid)
 	{
 		if (pid == 0)
 		{
-			u_putendl("[OK]");
+			u_putendl("\x1b[36m[OK]\x1b[m");
 			return (1);
 		}
 		else if (pid == 256)
-			u_putendl("[KO]");
+			u_putendl("\x1b[35m[KO]\x1b[m");
 	}
 	if (WIFSIGNALED(pid))
 	{
 		if (WTERMSIG(pid) == SIGSEGV)
-			u_putendl("[SEGV]");
+			u_putendl("\x1b[35m[SEGV]\x1b[m");
 		if (WTERMSIG(pid) == SIGBUS)
-			u_putendl("[BUSE]");
+			u_putendl("\x1b[35m[BUSE]\x1b[m");
 	}
 	return (0);
 }
