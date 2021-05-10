@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   02_atoi_null_test.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 14:36:36 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/10 23:01:49 by kyasuda          ###   ########.fr       */
+/*   Created: 2021/05/08 14:27:24 by kyasuda           #+#    #+#             */
+/*   Updated: 2021/05/10 09:01:37 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
 
-int	main(void)
+int	atoi_null_test(void)
 {
-	int	count;
+	const char	*s;
 
-	u_putendl("*********************************");
-	u_putendl("** 42 - Unit Tests ****");
-	u_putendl("*********************************");
-	count = TESTS_COUNT;
-	count += atoi_launcher();
-	count += strlcpy_launcher();
-	count += strlen_launcher();
-	count += strnstr_launcher();
-	if (count == TESTS_COUNT)
+	s = "";
+	if (ft_atoi(s) == atoi(s))
 		return (0);
 	else
 		return (-1);
