@@ -6,7 +6,7 @@
 #    By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/08 15:08:31 by kyasuda           #+#    #+#              #
-#    Updated: 2021/05/09 13:20:52 by yyamagum         ###   ########.fr        #
+#    Updated: 2021/05/10 21:23:59 by yyamagum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,13 +41,32 @@ STRLENNAME	=	00_launcher.c \
 				02_strlen_null_test.c
 STRLEN 		=	$(addprefix $(STRLENDIR), $(STRLENNAME))
 STRLENO 	= 	$(STRLEN:.c=.o)
+STRNSTRDIR	=	./strnstr/
+STRNSTRNAME	=	00_launcher.c \
+				01_strnstr_basic1_test.c \
+				02_strnstr_basic2_test.c \
+				03_strnstr_not_found1_test.c \
+				04_strnstr_not_found2_test.c \
+				05_strnstr_same_strs_test.c \
+				06_strnstr_same_strs_with_smaller_len_test.c \
+				07_strnstr_partial_match_test.c \
+				08_strnstr_null_first_arg_test.c \
+				09_strnstr_null_first_arg_with_len_test.c \
+				10_strnstr_null_second_arg_test.c \
+				11_strnstr_null_second_arg_with_len_test.c \
+				12_strnstr_null_args_test.c \
+				13_strnstr_null_args_with_len_test.c \
+				14_strnstr_empty_second_arg_test.c \
+				15_strnstr_empty_first_arg_test.c
+STRNSTR 		=	$(addprefix $(STRNSTRDIR), $(STRNSTRNAME))
+STRNSTRO 	= 	$(STRNSTR:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJSO) $(STRLCPYO) $(STRLENO) $(OBJSL)
+$(NAME): $(OBJSO) $(STRLCPYO) $(STRLENO) $(STRNSTRO) $(OBJSL)
 	$(MAKE) -C $(LIBUNITDIR)
 	$(MAKE) -C $(LIBFTDIR)
-	$(CC) $(CFLAGS) -I $(INCLUDES) $(LIBUNIT) $(LIBFT) $(OBJSO) $(STRLCPYO) $(STRLENO) -o $(NAME)
+	$(CC) $(CFLAGS) -I $(INCLUDES) $(LIBUNIT) $(LIBFT) $(OBJSO) $(STRLCPYO) $(STRLENO) $(STRNSTRO) -o $(NAME)
 	./$(NAME) > $(LOG) 2>/dev/null || true
 	cat $(LOG)
 
@@ -59,7 +78,7 @@ test: fclean all
 clean:
 	$(MAKE) -C $(LIBUNITDIR) clean
 	$(MAKE) -C $(LIBFTDIR) clean
-	rm -f $(OBJSO) $(STRLCPYO) $(STRLENO) $(LOG)
+	rm -f $(OBJSO) $(STRLCPYO) $(STRLENO) $(STRNSTRO) $(LOG)
 
 fclean:	clean
 	$(MAKE) -C $(LIBUNITDIR) fclean

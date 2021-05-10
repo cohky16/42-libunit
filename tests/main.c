@@ -6,7 +6,7 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 14:36:36 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/09 13:14:55 by yyamagum         ###   ########.fr       */
+/*   Updated: 2021/05/10 21:45:24 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	main(void)
 	count = TESTS_COUNT;
 	count += strlcpy_launcher();
 	count += strlen_launcher();
+	count += strnstr_launcher();
 	if (count == TESTS_COUNT)
 		return (0);
 	else

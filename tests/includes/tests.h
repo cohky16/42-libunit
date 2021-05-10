@@ -6,7 +6,7 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 14:12:23 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/09 13:14:17 by yyamagum         ###   ########.fr       */
+/*   Updated: 2021/05/10 21:36:01 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,22 @@ int		strlcpy_null_test(void);
 int		strlen_launcher(void);
 int		strlen_basic_test(void);
 int		strlen_null_test(void);
+
+int		strnstr_launcher(void);
+int		strnstr_basic1_test(void);
+int		strnstr_basic2_test(void);
+int		strnstr_not_found1_test(void);
+int		strnstr_not_found2_test(void);
+int		strnstr_same_strs_test(void);
+int		strnstr_same_strs_with_smaller_len_test(void);
+int		strnstr_partial_match_test(void);
+int		strnstr_null_first_arg_test(void);
+int		strnstr_null_first_arg_with_len_test(void);
+int		strnstr_null_second_arg_with_len_test(void);
+int		strnstr_null_second_arg_test(void);
+int		strnstr_null_args_test(void);
+int		strnstr_null_args_with_len_test(void);
+int		strnstr_empty_second_arg_test(void);
+int		strnstr_empty_first_arg_test(void);
 
 #endif
