@@ -6,7 +6,7 @@
 #    By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/08 15:08:31 by kyasuda           #+#    #+#              #
-#    Updated: 2021/05/10 22:48:21 by kyasuda          ###   ########.fr        #
+#    Updated: 2021/05/11 08:50:23 by kyasuda          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,12 @@ ATOINAME	=	00_atoi_launcher.c \
 				02_atoi_null_test.c
 ATOI 		=	$(addprefix $(ATOIDIR), $(ATOINAME))
 ATOIO 		= 	$(ATOI:.c=.o)
+BZERODIR	=	./bzero/
+BZERONAME	=	00_bzero_launcher.c \
+				01_bzero_basic_test.c \
+				02_bzero_null_test.c
+BZERO 		=	$(addprefix $(BZERODIR), $(BZERONAME))
+BZEROO 		= 	$(BZERO:.c=.o)
 STRLCPYDIR	=	./strlcpy/
 STRLCPYNAME	=	00_strlcpy_launcher.c \
 				01_strlcpy_basic_test.c \
@@ -69,10 +75,10 @@ STRNSTRO 	= 	$(STRNSTR:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJSO) $(ATOIO) $(STRLCPYO) $(STRLENO) $(STRNSTRO) $(OBJSL)
+$(NAME): $(OBJSO) $(ATOIO) $(BZEROO) $(STRLCPYO) $(STRLENO) $(STRNSTRO) $(OBJSL)
 	$(MAKE) -C $(LIBUNITDIR)
 	$(MAKE) -C $(LIBFTDIR)
-	$(CC) $(CFLAGS) -I $(INCLUDES) $(LIBUNIT) $(LIBFT) $(OBJSO) $(ATOIO) $(STRLCPYO) $(STRLENO) $(STRNSTRO) -o $(NAME)
+	$(CC) $(CFLAGS) -I $(INCLUDES) $(LIBUNIT) $(LIBFT) $(OBJSO) $(ATOIO) $(BZEROO) $(STRLCPYO) $(STRLENO) $(STRNSTRO) -o $(NAME)
 	./$(NAME) > $(LOG) 2>/dev/null || true
 	cat $(LOG)
 
@@ -84,7 +90,7 @@ test: fclean all
 clean:
 	$(MAKE) -C $(LIBUNITDIR) clean
 	$(MAKE) -C $(LIBFTDIR) clean
-	rm -f $(OBJSO) $(ATOIO) $(STRLCPYO) $(STRLENO) $(STRNSTRO) $(LOG)
+	rm -f $(OBJSO) $(ATOIO) $(BZEROO) $(STRLCPYO) $(STRLENO) $(STRNSTRO) $(LOG)
 
 fclean:	clean
 	$(MAKE) -C $(LIBUNITDIR) fclean
