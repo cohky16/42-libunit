@@ -6,7 +6,7 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 14:12:23 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/10 22:47:12 by kyasuda          ###   ########.fr       */
+/*   Updated: 2021/05/11 08:48:31 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@
 int		atoi_launcher(void);
 int		atoi_basic_test(void);
 int		atoi_null_test(void);
+
+int		bzero_launcher(void);
+int		bzero_basic_test(void);
+int		bzero_null_test(void);
 
 int		strlcpy_launcher(void);
 int		strlcpy_basic_test(void);
