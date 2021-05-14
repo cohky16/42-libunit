@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_strlcpy_launcher.c                              :+:      :+:    :+:   */
+/*   00_bzero_launcher.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 14:48:30 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/10 08:51:03 by kyasuda          ###   ########.fr       */
+/*   Updated: 2021/05/11 08:48:33 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static	void	load_tests(t_unit_test **testlist)
 {
-	load_test(testlist, "NULL   test", &strlcpy_null_test);
-	load_test(testlist, "BASIC  test", &strlcpy_basic_test);
+	load_test(testlist, "NULL   test", &bzero_null_test);
+	load_test(testlist, "BASIC  test", &bzero_basic_test);
 }
 
 static	void	put_count(int test_count, int testlist_len)
@@ -27,13 +27,13 @@ static	void	put_count(int test_count, int testlist_len)
 	u_putendl(" tests checked");
 }
 
-int	strlcpy_launcher(void)
+int	bzero_launcher(void)
 {
 	t_unit_test	*testlist;
 	int			test_count;
 	int			testlist_len;
 
-	u_putendl("STRLCPY: ");
+	u_putendl("BZERO: ");
 	testlist = NULL;
 	load_tests(&testlist);
 	test_count = launch_tests(&testlist);

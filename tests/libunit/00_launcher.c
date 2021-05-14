@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: yyamagum </var/mail/yyamagum>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 14:48:30 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/14 18:27:53 by yyamagum         ###   ########.fr       */
+/*   Created: 2021/05/14 18:25:01 by yyamagum          #+#    #+#             */
+/*   Updated: 2021/05/14 18:49:52 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 static void load_tests(t_unit_test **testlist)
 {
-    load_test(testlist,  "NULL test", &strlen_null_test);
-    load_test(testlist,  "BASIC test", &strlen_basic_test);
+    load_test(testlist,  "TIMEOUT test", &timeout_test);
 }
 
 static void  put_count(int test_count, int testlist_len)
@@ -27,13 +26,13 @@ static void  put_count(int test_count, int testlist_len)
     u_putendl(" tests checked");
 }
 
-int         strlen_launcher(void)
+int         test_launcher(void)
 {
     t_unit_test *testlist;
     int         test_count;
     int         testlist_len;
     
-    u_putendl("STRLEN: ");
+    u_putendl("TEST: ");
     testlist = NULL;
     load_tests(&testlist);
     test_count = launch_tests(&testlist);

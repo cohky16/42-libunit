@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   01_bzero_basic_test.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 14:36:36 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/14 18:42:32 by yyamagum         ###   ########.fr       */
+/*   Created: 2021/05/08 14:27:24 by kyasuda           #+#    #+#             */
+/*   Updated: 2021/05/12 09:54:13 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
 
-int	main(void)
+int	bzero_basic_test(void)
 {
-	int	count;
+	char	ft_s[10];
+	char	s[10];
 
-	u_putendl("*********************************");
-	u_putendl("** 42 - Unit Tests ****");
-	u_putendl("*********************************");
-	count = TESTS_COUNT;
-	count += test_launcher();
-	count += atoi_launcher();
-	count += bzero_launcher();
-	count += strlcpy_launcher();
-	count += strlen_launcher();
-	count += strnstr_launcher();
-	if (count == TESTS_COUNT)
+	ft_s[0] = 'a';
+	s[0] = 'a';
+	ft_bzero(ft_s, 5);
+	bzero(s, 5);
+	if (memcmp(ft_s, s, 5) == 0)
 		return (0);
 	else
 		return (-1);
