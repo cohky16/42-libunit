@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   01_bzero_basic_test.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/23 16:55:02 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/01/31 15:58:06 by kyasuda          ###   ########.fr       */
+/*   Created: 2021/05/08 14:27:24 by kyasuda           #+#    #+#             */
+/*   Updated: 2021/05/12 09:54:13 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "tests.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+int	bzero_basic_test(void)
 {
-	unsigned char	*s1_t;
-	unsigned char	*s2_t;
-	size_t			i;
+	char	ft_s[10];
+	char	s[10];
 
-	s1_t = (unsigned char *)s1;
-	s2_t = (unsigned char *)s2;
-	i = 0;
-	while (i < n)
-	{
-		if (s1_t[i] != s2_t[i])
-			return (s1_t[i] - s2_t[i]);
-		i++;
-	}
-	return (0);
+	ft_s[0] = 'a';
+	s[0] = 'a';
+	ft_bzero(ft_s, 5);
+	bzero(s, 5);
+	if (memcmp(ft_s, s, 5) == 0)
+		return (0);
+	else
+		return (-1);
 }

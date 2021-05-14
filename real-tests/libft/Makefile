@@ -6,7 +6,7 @@
 #    By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/23 09:27:13 by kyasuda           #+#    #+#              #
-#    Updated: 2021/05/14 18:36:38 by yyamagum         ###   ########.fr        #
+#    Updated: 2021/05/15 06:27:37 by yyamagum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,9 +41,7 @@ SRC = ft_memset.c \
 	ft_calloc.c \
 	ft_strdup.c \
 	ft_substr.c \
-	ft_strjoin.c \
 	ft_strtrim.c \
-	ft_split.c \
 	ft_itoa.c \
 	ft_strmapi.c \
 	ft_putchar_fd.c \

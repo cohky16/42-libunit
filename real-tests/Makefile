@@ -6,7 +6,7 @@
 #    By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/08 15:08:31 by kyasuda           #+#    #+#              #
-#    Updated: 2021/05/15 06:30:53 by yyamagum         ###   ########.fr        #
+#    Updated: 2021/05/15 06:22:02 by yyamagum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,34 +17,18 @@ INCLUDES 	= 	./includes
 LIBUNITDIR 	= 	../framework/
 LIBUNITNAME = 	libunit.a
 LIBUNIT 	= 	$(addprefix $(LIBUNITDIR), $(LIBUNITNAME))
-REALTESTSDIR 	= 	../real-tests/
+REALTESTSDIR 	= 	../real_tests/
 REALTESTSNAME 	= 	libft.a
 REALTESTS 		= 	$(addprefix $(REALTESTSDIR), $(REALTESTSNAME))
 LOG			=	result.log
 
-SRCSO 		= 	main.c \
-				testlibft/ft_strlcpy_ok.c \
-				testlibft/ft_strlcpy_ko.c \
-				testlibft/ft_strlcpy_segv.c \
-				testlibft/ft_strlcpy_buse.c \
-				testlibft/ft_strlcpy_timeout.c \
-				testlibft/ft_strlcpy_fpe.c
+SRCSO 		= 	main.c
 OBJSO 		= 	$(SRCSO:.c=.o)
 
-LIBFTDIR	=	../real-tests/libft/
+LIBFTDIR	=	./libft/
 LIBFTNAME	=	libft.a
 LIBFT 		=	$(addprefix $(LIBFTDIR), $(LIBFTNAME))
 
-TESTDIR		=	./libunit/
-TESTNAME 	=	00_launcher.c \
-				01_ok_test.c \
-				02_ko_test.c \
-				03_segv_test.c \
-				04_buse_test.c \
-				05_timeout_test.c \
-				06_floating_point_exception_test.c
-TEST 		=	$(addprefix $(TESTDIR), $(TESTNAME))
-TESTO 		= 	$(TEST:.c=.o)
 ATOIDIR		=	./atoi/
 ATOINAME	=	00_atoi_launcher.c \
 				01_atoi_basic_test.c \
@@ -91,10 +75,10 @@ STRNSTRO 	= 	$(STRNSTR:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJSO) $(TESTO) $(ATOIO) $(BZEROO) $(STRLCPYO) $(STRLENO) $(STRNSTRO) $(OBJSL)
+$(NAME): $(OBJSO) $(ATOIO) $(BZEROO) $(STRLCPYO) $(STRLENO) $(STRNSTRO) $(OBJSL)
 	$(MAKE) -C $(LIBUNITDIR)
 	$(MAKE) -C $(LIBFTDIR)
-	$(CC) $(CFLAGS) -I $(INCLUDES) $(LIBUNIT) $(LIBFT) $(OBJSO) $(TESTO) $(ATOIO) $(BZEROO) $(STRLCPYO) $(STRLENO) $(STRNSTRO) -o $(NAME)
+	$(CC) $(CFLAGS) -I $(INCLUDES) $(LIBUNIT) $(LIBFT) $(OBJSO) $(ATOIO) $(BZEROO) $(STRLCPYO) $(STRLENO) $(STRNSTRO) -o $(NAME)
 	./$(NAME) > $(LOG) 2>/dev/null || true
 	cat $(LOG)
 
@@ -106,7 +90,7 @@ test: fclean all
 clean:
 	$(MAKE) -C $(LIBUNITDIR) clean
 	$(MAKE) -C $(LIBFTDIR) clean
-	rm -f $(OBJSO) $(TESTO) $(ATOIO) $(BZEROO) $(STRLCPYO) $(STRLENO) $(STRNSTRO) $(LOG)
+	rm -f $(OBJSO) $(ATOIO) $(BZEROO) $(STRLCPYO) $(STRLENO) $(STRNSTRO) $(LOG)
 
 fclean:	clean
 	$(MAKE) -C $(LIBUNITDIR) fclean

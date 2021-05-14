@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   02_strlen_null_test.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: yyamagum </var/mail/yyamagum>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/23 18:18:24 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/02/07 13:21:35 by kyasuda          ###   ########.fr       */
+/*   Created: 2021/05/14 19:40:15 by yyamagum          #+#    #+#             */
+/*   Updated: 2021/05/14 19:40:16 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "tests.h"
 
-int		ft_toupper(int c)
+int	strlen_null_test(void)
 {
-	if (c >= 'a' && c <= 'z')
-		c -= 'a' - 'A';
-	return (c);
+	 const char	 *s = NULL;
+
+	 if (ft_strlen(s) == strlen(s))
+		  return (0);
+	 return (-1);
 }

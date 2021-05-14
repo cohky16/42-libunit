@@ -6,14 +6,14 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 14:12:23 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/15 06:20:21 by yyamagum         ###   ########.fr       */
+/*   Updated: 2021/05/15 06:20:48 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TESTS_H
 # define TESTS_H
 # include "../../framework/includes/libunit.h"
-# include "../../real_tests/libft/libft.h"
+# include "../libft/libft.h"
 # include <string.h>
 # define TESTS_COUNT 1
 
