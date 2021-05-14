@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_fpe.c                                         :+:      :+:    :+:   */
+/*   01_ok_test.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyamagum </var/mail/yyamagum>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/14 20:40:36 by yyamagum          #+#    #+#             */
-/*   Updated: 2021/05/14 20:47:26 by yyamagum         ###   ########.fr       */
+/*   Created: 2021/05/15 05:37:17 by yyamagum          #+#    #+#             */
+/*   Updated: 2021/05/15 06:02:09 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
 
-size_t	test_fpe(const char *s)
+int	ok_test(void)
 {
-	int	x;
-	int	y;
+	char	dst[10];
+	char	src[10];
 
-	x = 0;
-	y = 100 / x;
-	(void)s;
-	return (0);
+	if (ft_strlcpy_ok(dst, src, sizeof(dst)) == strlcpy(dst, src, sizeof(dst)))
+		return (0);
+	return (-1);
 }

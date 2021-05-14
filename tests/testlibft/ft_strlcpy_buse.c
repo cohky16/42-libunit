@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_floating_point_exception_test.c                 :+:      :+:    :+:   */
+/*   ft_strlcpy_buse.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyamagum </var/mail/yyamagum>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/14 20:39:29 by yyamagum          #+#    #+#             */
-/*   Updated: 2021/05/14 20:47:04 by yyamagum         ###   ########.fr       */
+/*   Created: 2021/05/15 05:57:46 by yyamagum          #+#    #+#             */
+/*   Updated: 2021/05/15 06:07:24 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
 
-int	fpe_test(void)
+size_t	ft_strlcpy_buse(char *dst, const char *src, size_t dstsize)
 {
-	const char	*s = "Hello";
+	size_t	len;
+	size_t	i;
 
-	if (test_fpe(s) == strlen(s))
+	if (!src)
 		return (0);
-	return (-1);
+	len = ft_strlen(src);
+	if (!dst || !dstsize)
+		return (len);
+	i = 0;
+	dst = "bus error";
+	while (i < 42)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (len);
 }

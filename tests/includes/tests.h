@@ -6,7 +6,7 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 14:12:23 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/14 20:42:25 by yyamagum         ###   ########.fr       */
+/*   Updated: 2021/05/15 06:06:47 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,17 @@ int		strnstr_empty_second_arg_test(void);
 int		strnstr_empty_first_arg_test(void);
 
 int		test_launcher(void);
+int		ok_test(void);
+int		ko_test(void);
+int		segv_test(void);
+int		buse_test(void);
 int		timeout_test(void);
 int		fpe_test(void);
-size_t	test_timeout(const char *s);
-size_t	test_fpe(const char *s);
+size_t	ft_strlcpy_ok(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcpy_ko(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcpy_segv(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcpy_buse(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcpy_timeout(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcpy_fpe(char *dst, const char *src, size_t dstsize);
 
 #endif

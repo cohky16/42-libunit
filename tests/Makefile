@@ -6,7 +6,7 @@
 #    By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/08 15:08:31 by kyasuda           #+#    #+#              #
-#    Updated: 2021/05/14 20:46:06 by yyamagum         ###   ########.fr        #
+#    Updated: 2021/05/15 06:04:07 by yyamagum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,12 @@ REALTESTS 		= 	$(addprefix $(REALTESTSDIR), $(REALTESTSNAME))
 LOG			=	result.log
 
 SRCSO 		= 	main.c \
-				libft/test_timeout.c \
-				libft/test_fpe.c
+				testlibft/ft_strlcpy_ok.c \
+				testlibft/ft_strlcpy_ko.c \
+				testlibft/ft_strlcpy_segv.c \
+				testlibft/ft_strlcpy_buse.c \
+				testlibft/ft_strlcpy_timeout.c \
+				testlibft/ft_strlcpy_fpe.c
 OBJSO 		= 	$(SRCSO:.c=.o)
 
 LIBFTDIR	=	../libft/
@@ -33,8 +37,12 @@ LIBFT 		=	$(addprefix $(LIBFTDIR), $(LIBFTNAME))
 
 TESTDIR		=	./libunit/
 TESTNAME 	=	00_launcher.c \
-				01_timeout_test.c \
-				02_floating_point_exception_test.c
+				01_ok_test.c \
+				02_ko_test.c \
+				03_segv_test.c \
+				04_buse_test.c \
+				05_timeout_test.c \
+				06_floating_point_exception_test.c
 TEST 		=	$(addprefix $(TESTDIR), $(TESTNAME))
 TESTO 		= 	$(TEST:.c=.o)
 ATOIDIR		=	./atoi/

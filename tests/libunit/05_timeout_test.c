@@ -6,7 +6,7 @@
 /*   By: yyamagum </var/mail/yyamagum>			  +#+  +:+	   +#+		*/
 /*												+#+#+#+#+#+   +#+		   */
 /*   Created: 2021/05/14 19:06:53 by yyamagum		  #+#	#+#			 */
-/*   Updated: 2021/05/14 19:38:52 by yyamagum         ###   ########.fr       */
+/*   Updated: 2021/05/15 06:14:39 by yyamagum         ###   ########.fr       */
 /*																			*/
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 int	timeout_test(void)
 {
-	const char	*s = "Hello";
+	char	dst[10];
+	char	src[10];
 
-	if (test_timeout(s) == strlen(s))
+	if (ft_strlcpy_timeout(dst, src, sizeof(dst))
+		== strlcpy(dst, src, sizeof(dst)))
 		return (0);
 	return (-1);
 }

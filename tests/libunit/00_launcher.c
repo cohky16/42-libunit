@@ -6,7 +6,7 @@
 /*   By: yyamagum </var/mail/yyamagum>			  +#+  +:+	   +#+		*/
 /*												+#+#+#+#+#+   +#+		   */
 /*   Created: 2021/05/14 18:25:01 by yyamagum		  #+#	#+#			 */
-/*   Updated: 2021/05/14 20:44:05 by yyamagum         ###   ########.fr       */
+/*   Updated: 2021/05/15 06:15:07 by yyamagum         ###   ########.fr       */
 /*																			*/
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 
 static void	load_tests(t_unit_test **testlist)
 {
-	load_test(testlist, "FPE test", &fpe_test);
+	load_test(testlist, "FPE     test", &fpe_test);
 	load_test(testlist, "TIMEOUT test", &timeout_test);
+	load_test(testlist, "BUSE    test", &buse_test);
+	load_test(testlist, "SEGV    test", &segv_test);
+	load_test(testlist, "KO      test", &ko_test);
+	load_test(testlist, "OK      test", &ok_test);
 }
 
 static void	put_count(int test_count, int testlist_len)
@@ -27,7 +31,7 @@ static void	put_count(int test_count, int testlist_len)
 	u_putendl(" tests checked");
 }
 
-int		 test_launcher(void)
+int	test_launcher(void)
 {
 	t_unit_test	*testlist;
 	int			test_count;
