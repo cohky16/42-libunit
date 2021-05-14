@@ -6,13 +6,13 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 18:14:35 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/02/02 08:16:55 by kyasuda          ###   ########.fr       */
+/*   Updated: 2021/05/14 19:30:30 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int		ft_set_start(size_t start, size_t len,
+static	int	ft_set_start(size_t start, size_t len,
 							char const *s1, char const *set)
 {
 	size_t	i;
@@ -30,7 +30,7 @@ static	int		ft_set_start(size_t start, size_t len,
 	return (start);
 }
 
-static	int		ft_set_end(size_t end, size_t len,
+static	int	ft_set_end(size_t end, size_t len,
 							char const *s1, char const *set)
 {
 	while (len > 0)
@@ -45,7 +45,7 @@ static	int		ft_set_end(size_t end, size_t len,
 	return (end);
 }
 
-char			*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	len;
 	size_t	start;
@@ -60,7 +60,8 @@ char			*ft_strtrim(char const *s1, char const *set)
 	end = 0;
 	end = ft_set_end(end, len, s1, set);
 	len = end - start;
-	if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
 		return (NULL);
 	ft_strlcpy(str, s1 + start, len + 1);
 	return (str);

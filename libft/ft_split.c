@@ -6,13 +6,13 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 08:31:43 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/02/11 09:33:23 by kyasuda          ###   ########.fr       */
+/*   Updated: 2021/05/14 20:05:43 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int		ft_count(char const *s, char c)
+static	int	ft_count(char const *s, char c)
 {
 	int		flag;
 	int		i;
@@ -36,7 +36,7 @@ static	int		ft_count(char const *s, char c)
 	return (count);
 }
 
-static	int		ft_next_len(char *str, char c)
+static	int	ft_next_len(char *str, char c)
 {
 	int		i;
 
@@ -50,7 +50,7 @@ static	int		ft_next_len(char *str, char c)
 	return (i);
 }
 
-static	int		ft_next_start(char *str, char c, int len)
+static	int	ft_next_start(char *str, char c, int len)
 {
 	int		i;
 
@@ -75,7 +75,8 @@ static	char	**ft_set_result(int count, char *str, char **result, char c)
 	while (i < count)
 	{
 		len = ft_next_len(str + start, c);
-		if (!(result[i++] = ft_substr(str, start, len)))
+		result[i] = ft_substr(str, start, len);
+		if (result[i++])
 		{
 			while (--i >= 0)
 				free(result[i]);
@@ -90,7 +91,7 @@ static	char	**ft_set_result(int count, char *str, char **result, char c)
 	return (result);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int		count;
 	char	sep[2];
@@ -101,7 +102,8 @@ char			**ft_split(char const *s, char c)
 	if (!s || !(str = ft_strtrim(s, sep)))
 		return (NULL);
 	count = ft_count(str, c);
-	if (!(result = (char **)malloc(sizeof(char *) * (count + 1))))
+	result = (char **)malloc(sizeof(char *) * (count + 1));
+	if (!result)
 	{
 		free(str);
 		return (NULL);

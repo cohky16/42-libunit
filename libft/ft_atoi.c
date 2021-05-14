@@ -6,13 +6,13 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 11:45:56 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/02/07 13:00:40 by kyasuda          ###   ########.fr       */
+/*   Updated: 2021/05/14 19:28:41 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int		ft_is_space(const char *str, int *symbol)
+static	int	ft_is_space(const char *str, int *symbol)
 {
 	int		i;
 
@@ -25,15 +25,15 @@ static	int		ft_is_space(const char *str, int *symbol)
 			*symbol = -1;
 		else if (str[i] == '+' && ft_isdigit(str[i + 1]))
 			*symbol = 1;
-		else if (!(str[i] == '\t' || str[i] == '\n' || str[i] == '\v' ||
-					str[i] == '\f' || str[i] == '\r' || str[i] == ' '))
+		else if (!(str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
+				|| str[i] == '\f' || str[i] == '\r' || str[i] == ' '))
 			return (-1);
 		i++;
 	}
 	return (i);
 }
 
-int				ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	long	result;
 	int		symbol;

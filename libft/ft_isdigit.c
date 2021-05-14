@@ -6,13 +6,13 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 17:28:32 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/02/07 13:03:57 by kyasuda          ###   ########.fr       */
+/*   Updated: 2021/05/14 19:27:14 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }

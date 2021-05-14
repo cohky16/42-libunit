@@ -6,13 +6,13 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 18:53:21 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/02/07 15:46:12 by kyasuda          ###   ########.fr       */
+/*   Updated: 2021/05/14 19:25:15 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int		ft_check_minus(int *n)
+static	int	ft_check_minus(int *n)
 {
 	int		minus;
 
@@ -25,7 +25,7 @@ static	int		ft_check_minus(int *n)
 	return (minus);
 }
 
-static	int		ft_isdigits(int n, int flag)
+static	int	ft_isdigits(int n, int flag)
 {
 	int		count;
 
@@ -41,7 +41,7 @@ static	int		ft_isdigits(int n, int flag)
 	return (count);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*result;
 	int		digits;
@@ -51,7 +51,8 @@ char			*ft_itoa(int n)
 		return (ft_strdup(("-2147483648")));
 	flag = ft_check_minus(&n);
 	digits = ft_isdigits(n, flag);
-	if (!(result = (char *)malloc(sizeof(char) * (digits + 1))))
+	result = (char *)malloc(sizeof(char) * (digits + 1));
+	if (!result)
 		return (NULL);
 	result[digits--] = '\0';
 	while (digits >= 0)

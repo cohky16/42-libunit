@@ -6,7 +6,7 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 15:08:20 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/14 18:18:48 by yyamagum         ###   ########.fr       */
+/*   Updated: 2021/05/14 19:35:31 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ static	int	check_pid(pid_t pid)
 // 子プロセスの作成とテストの実行
 static	int	exec_test(int (*function)(void))
 {
-	pid_t	pid;
-	struct itimerval value;
+	pid_t				pid;
+	struct itimerval	value;
 
 	pid = fork();
 	if (pid == 0)

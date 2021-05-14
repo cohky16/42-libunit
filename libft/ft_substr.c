@@ -6,7 +6,7 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 16:00:24 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/02/05 14:09:16 by kyasuda          ###   ########.fr       */
+/*   Updated: 2021/05/14 19:32:05 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	else if (ft_strlen(s) < len)
 		len = ft_strlen(s);
-	if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
 		return (NULL);
 	if (start >= ft_strlen(s))
 		return (str);

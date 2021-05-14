@@ -6,7 +6,7 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 11:17:03 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/02/05 14:30:49 by kyasuda          ###   ########.fr       */
+/*   Updated: 2021/05/14 20:03:58 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	i = 0;
 	while (haystack[i] && len >= needle_len)
 	{
-		if (haystack[i] == needle[0] &&
-			!ft_memcmp(haystack + i, needle, needle_len))
+		if (haystack[i] == needle[0]
+			&& !ft_memcmp(haystack + i, needle, needle_len))
 			return ((char *)haystack + i);
 		len--;
 		i++;

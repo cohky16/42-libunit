@@ -5,20 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyamagum </var/mail/yyamagum>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/10 21:18:10 by yyamagum          #+#    #+#             */
-/*   Updated: 2021/05/10 21:18:11 by yyamagum         ###   ########.fr       */
+/*   Created: 2021/05/14 19:53:32 by yyamagum          #+#    #+#             */
+/*   Updated: 2021/05/14 19:53:34 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
 
-int     strnstr_not_found2_test(void)
+int	strnstr_not_found2_test(void)
 {
-    const char    *s1 = "Hello Hello!";
-    const char    *s2 = "test";
+	const char	*s1 = "Hello Hello!";
+	const char	*s2 = "test";
 	const int	len = 12;
 
-    if (ft_strnstr(s1, s2, len) == strnstr(s1, s2, len))
-        return (0);
-    return (-1);
+	if (ft_strnstr(s1, s2, len) == strnstr(s1, s2, len))
+		return (0);
+	return (-1);
 }

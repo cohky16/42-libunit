@@ -6,7 +6,7 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 14:30:39 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/02/07 13:32:37 by kyasuda          ###   ########.fr       */
+/*   Updated: 2021/05/14 19:29:47 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void	*ft_calloc(size_t count, size_t size)
 	void	*mem;
 
 	ft_size = count * size;
-	if (!(mem = malloc(ft_size)))
+	mem = malloc(ft_size);
+	if (!mem)
 		return (NULL);
 	ft_bzero(mem, ft_size);
 	return (mem);

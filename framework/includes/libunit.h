@@ -6,7 +6,7 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 15:07:22 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/14 18:15:36 by yyamagum         ###   ########.fr       */
+/*   Updated: 2021/05/14 19:35:47 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <signal.h>
 # include <unistd.h>
 # include <stdlib.h>
-#include <sys/time.h>
+# include <sys/time.h>
 
 typedef struct s_unit_test
 {

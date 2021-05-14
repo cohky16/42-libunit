@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01_strlen_basic_test.c                                    :+:      :+:    :+:   */
+/*   01_strlen_basic_test.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: yyamagum </var/mail/yyamagum>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/08 14:27:24 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/09 14:35:07 by yyamagum         ###   ########.fr       */
+/*   Created: 2021/05/14 19:42:26 by yyamagum          #+#    #+#             */
+/*   Updated: 2021/05/14 19:42:42 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
 
-int     strlen_basic_test(void)
+int	strlen_basic_test(void)
 {
-    const char    *s = "Hello";
+	 const char	 *s = "Hello";
 
-    if (ft_strlen(s) == strlen(s))
-        return (0);
-    return (-1);
+	 if (ft_strlen(s) == strlen(s))
+		  return (0);
+	 return (-1);
 }
