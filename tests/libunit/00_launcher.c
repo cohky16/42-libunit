@@ -6,7 +6,7 @@
 /*   By: yyamagum </var/mail/yyamagum>			  +#+  +:+	   +#+		*/
 /*												+#+#+#+#+#+   +#+		   */
 /*   Created: 2021/05/14 18:25:01 by yyamagum		  #+#	#+#			 */
-/*   Updated: 2021/05/14 20:05:22 by yyamagum         ###   ########.fr       */
+/*   Updated: 2021/05/14 20:44:05 by yyamagum         ###   ########.fr       */
 /*																			*/
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static void	load_tests(t_unit_test **testlist)
 {
+	load_test(testlist, "FPE test", &fpe_test);
 	load_test(testlist, "TIMEOUT test", &timeout_test);
 }
 

@@ -6,7 +6,7 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 14:12:23 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/14 20:02:16 by yyamagum         ###   ########.fr       */
+/*   Updated: 2021/05/14 20:42:25 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ int		strnstr_empty_first_arg_test(void);
 
 int		test_launcher(void);
 int		timeout_test(void);
+int		fpe_test(void);
 size_t	test_timeout(const char *s);
+size_t	test_fpe(const char *s);
 
 #endif

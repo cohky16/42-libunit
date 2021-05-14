@@ -6,7 +6,7 @@
 #    By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/08 15:08:31 by kyasuda           #+#    #+#              #
-#    Updated: 2021/05/14 18:46:21 by yyamagum         ###   ########.fr        #
+#    Updated: 2021/05/14 20:46:06 by yyamagum         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ REALTESTS 		= 	$(addprefix $(REALTESTSDIR), $(REALTESTSNAME))
 LOG			=	result.log
 
 SRCSO 		= 	main.c \
-				libft/test_timeout.c
+				libft/test_timeout.c \
+				libft/test_fpe.c
 OBJSO 		= 	$(SRCSO:.c=.o)
 
 LIBFTDIR	=	../libft/
@@ -32,7 +33,8 @@ LIBFT 		=	$(addprefix $(LIBFTDIR), $(LIBFTNAME))
 
 TESTDIR		=	./libunit/
 TESTNAME 	=	00_launcher.c \
-				01_timeout_test.c
+				01_timeout_test.c \
+				02_floating_point_exception_test.c
 TEST 		=	$(addprefix $(TESTDIR), $(TESTNAME))
 TESTO 		= 	$(TEST:.c=.o)
 ATOIDIR		=	./atoi/

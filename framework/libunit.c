@@ -6,7 +6,7 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 15:08:20 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/14 19:35:31 by yyamagum         ###   ########.fr       */
+/*   Updated: 2021/05/14 20:48:11 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ static	int	check_pid(pid_t pid)
 			u_putendl("\x1b[35m[SEGV]\x1b[m");
 		if (WTERMSIG(pid) == SIGBUS)
 			u_putendl("\x1b[35m[BUSE]\x1b[m");
+		if (WTERMSIG(pid) == SIGFPE)
+			u_putendl("\x1b[35m[FPE]\x1b[m");
 		if (WTERMSIG(pid) == SIGALRM)
 			u_putendl("\x1b[35m[TIMEOUT]\x1b[m");
 	}
