@@ -6,13 +6,12 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 15:08:20 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/14 20:48:11 by yyamagum         ###   ########.fr       */
+/*   Updated: 2021/05/15 11:06:55 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
 
-// 構造体の作成
 static	t_unit_test	*new_unit_test(char *name, int(*function)(void))
 {
 	t_unit_test	*new;
@@ -25,8 +24,6 @@ static	t_unit_test	*new_unit_test(char *name, int(*function)(void))
 	return (new);
 }
 
-// テスト関数を読み込む
-// e.g. load_test(&testlist, "Basic test", &basic_test);
 void	load_test(t_unit_test **testlist, char *name, int (*function)(void))
 {
 	t_unit_test	*new;
@@ -36,7 +33,6 @@ void	load_test(t_unit_test **testlist, char *name, int (*function)(void))
 	*testlist = new;
 }
 
-// プロセスidのチェック
 static	int	check_pid(pid_t pid)
 {
 	if (WIFEXITED(pid))
@@ -63,7 +59,6 @@ static	int	check_pid(pid_t pid)
 	return (0);
 }
 
-// 子プロセスの作成とテストの実行
 static	int	exec_test(int (*function)(void))
 {
 	pid_t				pid;
@@ -86,8 +81,6 @@ static	int	exec_test(int (*function)(void))
 	return (check_pid(pid));
 }
 
-// テスト関数を実行する
-// e.g. launch_tests(&testlist));
 int	launch_tests(t_unit_test **testlist)
 {
 	t_unit_test	*test;
