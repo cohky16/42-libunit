@@ -6,12 +6,11 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 14:36:36 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/15 10:35:28 by kyasuda          ###   ########.fr       */
+/*   Updated: 2021/05/15 10:54:10 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
-#include <stdio.h>
 
 int	main(void)
 {
