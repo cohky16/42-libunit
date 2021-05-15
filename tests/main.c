@@ -6,7 +6,7 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 14:36:36 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/11 08:48:45 by kyasuda          ###   ########.fr       */
+/*   Updated: 2021/05/15 05:14:11 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	main(void)
 	u_putendl("** 42 - Unit Tests ****");
 	u_putendl("*********************************");
 	count = TESTS_COUNT;
+	count += test_launcher();
 	count += atoi_launcher();
 	count += bzero_launcher();
 	count += strlcpy_launcher();

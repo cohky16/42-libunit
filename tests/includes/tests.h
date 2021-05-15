@@ -6,14 +6,14 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 14:12:23 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/11 08:48:31 by kyasuda          ###   ########.fr       */
+/*   Updated: 2021/05/15 06:38:05 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TESTS_H
 # define TESTS_H
 # include "../../framework/includes/libunit.h"
-# include "../../libft/libft.h"
+# include "../../real-tests/libft/libft.h"
 # include <string.h>
 # define TESTS_COUNT 1
 
@@ -49,5 +49,19 @@ int		strnstr_null_args_test(void);
 int		strnstr_null_args_with_len_test(void);
 int		strnstr_empty_second_arg_test(void);
 int		strnstr_empty_first_arg_test(void);
+
+int		test_launcher(void);
+int		ok_test(void);
+int		ko_test(void);
+int		segv_test(void);
+int		buse_test(void);
+int		timeout_test(void);
+int		fpe_test(void);
+size_t	ft_strlcpy_ok(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcpy_ko(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcpy_segv(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcpy_buse(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcpy_timeout(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcpy_fpe(char *dst, const char *src, size_t dstsize);
 
 #endif

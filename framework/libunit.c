@@ -6,7 +6,7 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 15:08:20 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/10 18:32:16 by yyamagum         ###   ########.fr       */
+/*   Updated: 2021/05/14 20:48:11 by yyamagum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,10 @@ static	int	check_pid(pid_t pid)
 			u_putendl("\x1b[35m[SEGV]\x1b[m");
 		if (WTERMSIG(pid) == SIGBUS)
 			u_putendl("\x1b[35m[BUSE]\x1b[m");
+		if (WTERMSIG(pid) == SIGFPE)
+			u_putendl("\x1b[35m[FPE]\x1b[m");
+		if (WTERMSIG(pid) == SIGALRM)
+			u_putendl("\x1b[35m[TIMEOUT]\x1b[m");
 	}
 	return (0);
 }
@@ -62,11 +66,17 @@ static	int	check_pid(pid_t pid)
 // 子プロセスの作成とテストの実行
 static	int	exec_test(int (*function)(void))
 {
-	pid_t	pid;
+	pid_t				pid;
+	struct itimerval	value;
 
 	pid = fork();
 	if (pid == 0)
 	{
+		value.it_value.tv_sec = 0;
+		value.it_value.tv_usec = 10000;
+		value.it_interval.tv_sec = 0;
+		value.it_interval.tv_usec = 10000;
+		setitimer(ITIMER_REAL, &value, NULL);
 		if (function() == 0)
 			exit(0);
 		exit(1);
