@@ -6,11 +6,11 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 14:48:30 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/10 08:54:23 by kyasuda          ###   ########.fr       */
+/*   Updated: 2021/05/15 10:27:52 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 static	void	load_tests(t_unit_test **testlist)
 {
@@ -25,6 +25,7 @@ static	void	put_count(int test_count, int testlist_len)
 	u_putc('/');
 	u_putn(testlist_len);
 	u_putendl(" tests checked");
+	u_putc('\n');
 }
 
 int	atoi_launcher(void)

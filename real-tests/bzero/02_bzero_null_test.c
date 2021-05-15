@@ -6,11 +6,11 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 14:27:24 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/12 09:55:04 by kyasuda          ###   ########.fr       */
+/*   Updated: 2021/05/15 10:19:23 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 int	bzero_null_test(void)
 {

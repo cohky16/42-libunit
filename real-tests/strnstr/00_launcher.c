@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyamagum </var/mail/yyamagum>              +#+  +:+       +#+        */
+/*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 19:43:51 by yyamagum          #+#    #+#             */
-/*   Updated: 2021/05/15 05:23:57 by yyamagum         ###   ########.fr       */
+/*   Updated: 2021/05/15 10:28:04 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 static void	load_tests(t_unit_test **testlist)
 {
@@ -18,15 +18,6 @@ static void	load_tests(t_unit_test **testlist)
 		&strnstr_empty_first_arg_test);
 	load_test(testlist, "EMPTY 2nd ARG         test",
 		&strnstr_empty_second_arg_test);
-	load_test(testlist, "NULL ARGS WITH LEN    test",
-		&strnstr_null_args_with_len_test);
-	load_test(testlist, "NULL ARGS             test", &strnstr_null_args_test);
-	load_test(testlist, "NULL 2nd ARG WITH LEN test",
-		&strnstr_null_second_arg_with_len_test);
-	load_test(testlist, "NULL 2nd ARG          test",
-		&strnstr_null_second_arg_test);
-	load_test(testlist, "NULL 1st ARG WITH LEN test",
-		&strnstr_null_first_arg_with_len_test);
 	load_test(testlist, "NULL 1st ARG          test",
 		&strnstr_null_first_arg_test);
 	load_test(testlist, "PARTIAL MATCH         test",
@@ -47,6 +38,7 @@ static void	put_count(int test_count, int testlist_len)
 	u_putc('/');
 	u_putn(testlist_len);
 	u_putendl(" tests checked");
+	u_putc('\n');
 }
 
 int	strnstr_launcher(void)

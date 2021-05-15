@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   05_strnstr_same_strs_test.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyamagum </var/mail/yyamagum>              +#+  +:+       +#+        */
+/*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 19:53:52 by yyamagum          #+#    #+#             */
-/*   Updated: 2021/05/14 19:53:53 by yyamagum         ###   ########.fr       */
+/*   Updated: 2021/05/15 10:33:45 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 int	strnstr_same_strs_test(void)
 {
@@ -20,5 +20,6 @@ int	strnstr_same_strs_test(void)
 
 	if (ft_strnstr(s1, s2, len) == strnstr(s1, s2, len))
 		return (0);
-	return (-1);
+	else
+		return (-1);
 }

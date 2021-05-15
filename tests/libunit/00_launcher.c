@@ -29,6 +29,7 @@ static void	put_count(int test_count, int testlist_len)
 	u_putc('/');
 	u_putn(testlist_len);
 	u_putendl(" tests checked");
+	u_putc('\n');
 }
 
 int	test_launcher(void)

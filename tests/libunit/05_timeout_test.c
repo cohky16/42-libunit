@@ -20,5 +20,6 @@ int	timeout_test(void)
 	if (ft_strlcpy_timeout(dst, src, sizeof(dst))
 		== strlcpy(dst, src, sizeof(dst)))
 		return (0);
-	return (-1);
+	else
+		return (-1);
 }

@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   00_launcher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyamagum </var/mail/yyamagum>              +#+  +:+       +#+        */
+/*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 19:40:49 by yyamagum          #+#    #+#             */
-/*   Updated: 2021/05/15 05:14:34 by yyamagum         ###   ########.fr       */
+/*   Updated: 2021/05/15 10:28:01 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 static void	load_tests(t_unit_test **testlist)
 {
-	load_test(testlist, "NULL  test", &strlen_null_test);
-	load_test(testlist, "BASIC test", &strlen_basic_test);
+	load_test(testlist, "EMPTY	test", &strlen_empty_test);
+	load_test(testlist, "BASIC	test", &strlen_basic_test);
 }
 
 static void	put_count(int test_count, int testlist_len)
@@ -25,6 +25,7 @@ static void	put_count(int test_count, int testlist_len)
 	u_putc('/');
 	u_putn(testlist_len);
 	u_putendl(" tests checked");
+	u_putc('\n');
 }
 
 int	strlen_launcher(void)

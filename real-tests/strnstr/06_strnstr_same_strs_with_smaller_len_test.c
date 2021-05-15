@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   06_strnstr_same_strs_with_smaller_len_tes          :+:      :+:    :+:   */
+/*   06_strnstr_same_strs_with_smaller_len_test.        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyamagum </var/mail/yyamagum>              +#+  +:+       +#+        */
+/*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 19:54:10 by yyamagum          #+#    #+#             */
-/*   Updated: 2021/05/14 19:57:47 by yyamagum         ###   ########.fr       */
+/*   Updated: 2021/05/15 10:33:53 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 int	strnstr_same_strs_with_smaller_len_test(void)
 {
@@ -20,5 +20,6 @@ int	strnstr_same_strs_with_smaller_len_test(void)
 
 	if (ft_strnstr(s1, s2, len) == strnstr(s1, s2, len))
 		return (0);
-	return (-1);
+	else
+		return (-1);
 }

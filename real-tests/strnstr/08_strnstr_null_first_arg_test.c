@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   08_strnstr_null_first_arg_test.c                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyamagum </var/mail/yyamagum>              +#+  +:+       +#+        */
+/*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 19:54:48 by yyamagum          #+#    #+#             */
-/*   Updated: 2021/05/14 19:54:48 by yyamagum         ###   ########.fr       */
+/*   Updated: 2021/05/15 10:20:13 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 int	strnstr_null_first_arg_test(void)
 {

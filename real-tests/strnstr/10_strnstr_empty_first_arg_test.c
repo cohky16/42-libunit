@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_strlen_null_test.c                              :+:      :+:    :+:   */
+/*   10_strnstr_empty_first_arg_test.c                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyamagum </var/mail/yyamagum>              +#+  +:+       +#+        */
+/*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/14 19:40:15 by yyamagum          #+#    #+#             */
-/*   Updated: 2021/05/14 19:40:16 by yyamagum         ###   ########.fr       */
+/*   Created: 2021/05/14 19:56:43 by yyamagum          #+#    #+#             */
+/*   Updated: 2021/05/15 10:34:08 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
-int	strlen_null_test(void)
+int	strnstr_empty_first_arg_test(void)
 {
-	 const char	 *s = NULL;
+	const char	*s1 = "";
+	const char	*s2 = "Hello World!";
+	const int	len = 0;
 
-	 if (ft_strlen(s) == strlen(s))
-		  return (0);
-	 return (-1);
+	if (ft_strnstr(s1, s2, len) == strnstr(s1, s2, len))
+		return (0);
+	else
+		return (-1);
 }

@@ -6,11 +6,11 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 14:27:24 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/09 12:55:00 by kyasuda          ###   ########.fr       */
+/*   Updated: 2021/05/15 10:16:33 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 int	strlcpy_null_test(void)
 {

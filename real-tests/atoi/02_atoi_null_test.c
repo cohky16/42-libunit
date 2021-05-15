@@ -6,11 +6,11 @@
 /*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 14:27:24 by kyasuda           #+#    #+#             */
-/*   Updated: 2021/05/10 09:01:37 by kyasuda          ###   ########.fr       */
+/*   Updated: 2021/05/15 10:19:09 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "real_tests.h"
 
 int	atoi_null_test(void)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   03_segv_test.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyamagum </var/mail/yyamagum>              +#+  +:+       +#+        */
+/*   By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 05:38:35 by yyamagum          #+#    #+#             */
-/*   Updated: 2021/05/15 06:14:48 by yyamagum         ###   ########.fr       */
+/*   Updated: 2021/05/15 10:34:36 by kyasuda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ int	segv_test(void)
 	if (ft_strlcpy_segv(dst, src, sizeof(dst))
 		== strlcpy(dst, src, sizeof(dst)))
 		return (0);
-	return (-1);
+	else
+		return (-1);
 }

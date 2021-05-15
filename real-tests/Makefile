@@ -6,20 +6,17 @@
 #    By: kyasuda <kyasuda@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/08 15:08:31 by kyasuda           #+#    #+#              #
-#    Updated: 2021/05/15 06:22:02 by yyamagum         ###   ########.fr        #
+#    Updated: 2021/05/15 10:23:47 by kyasuda          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		= 	tests
+NAME 		= 	real_tests
 CC			=	gcc
 CFLAGS		=	-Wall -Wextra -Werror
 INCLUDES 	= 	./includes
 LIBUNITDIR 	= 	../framework/
 LIBUNITNAME = 	libunit.a
 LIBUNIT 	= 	$(addprefix $(LIBUNITDIR), $(LIBUNITNAME))
-REALTESTSDIR 	= 	../real_tests/
-REALTESTSNAME 	= 	libft.a
-REALTESTS 		= 	$(addprefix $(REALTESTSDIR), $(REALTESTSNAME))
 LOG			=	result.log
 
 SRCSO 		= 	main.c
@@ -50,7 +47,7 @@ STRLCPYO 	= 	$(STRLCPY:.c=.o)
 STRLENDIR	=	./strlen/
 STRLENNAME	=	00_launcher.c \
 				01_strlen_basic_test.c \
-				02_strlen_null_test.c
+				02_strlen_empty_test.c
 STRLEN 		=	$(addprefix $(STRLENDIR), $(STRLENNAME))
 STRLENO 	= 	$(STRLEN:.c=.o)
 STRNSTRDIR	=	./strnstr/
@@ -63,13 +60,8 @@ STRNSTRNAME	=	00_launcher.c \
 				06_strnstr_same_strs_with_smaller_len_test.c \
 				07_strnstr_partial_match_test.c \
 				08_strnstr_null_first_arg_test.c \
-				09_strnstr_null_first_arg_with_len_test.c \
-				10_strnstr_null_second_arg_test.c \
-				11_strnstr_null_second_arg_with_len_test.c \
-				12_strnstr_null_args_test.c \
-				13_strnstr_null_args_with_len_test.c \
-				14_strnstr_empty_second_arg_test.c \
-				15_strnstr_empty_first_arg_test.c
+				09_strnstr_empty_second_arg_test.c \
+				10_strnstr_empty_first_arg_test.c
 STRNSTR 		=	$(addprefix $(STRNSTRDIR), $(STRNSTRNAME))
 STRNSTRO 	= 	$(STRNSTR:.c=.o)
 
